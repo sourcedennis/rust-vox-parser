@@ -1,0 +1,8 @@
+[package]
+name = "vox-parser"
+version = "0.1.0"
+authors = ["Dennis <me@dennis.life>"]
+edition = "2018"
+
+[dependencies]
+nom = "6"
