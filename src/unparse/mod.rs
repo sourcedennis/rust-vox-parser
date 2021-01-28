@@ -43,7 +43,7 @@ use helpers::le_u32;
 /// The `.vox` file is entirely described by the chunks. No validation is
 /// performed on these chunks, or their order. Note that this order must satisfy
 /// the order as given by the specification.
-pub fn file_raw( chunks: &[Chunk] ) -> Vec< u8 >{
+pub fn file_raw( chunks: &[Chunk] ) -> Vec< u8 > {
   let mut dst = Vec::new( );
 
   dst.extend( b"VOX " ); // "VOX "
@@ -68,9 +68,9 @@ pub fn file_raw( chunks: &[Chunk] ) -> Vec< u8 >{
 /// 
 /// The scene is converted into its corresponding `Chunk`s, which are written to
 /// the vector.
-pub fn file_custom( scene: &VoxScene ) {
+pub fn file_custom( scene: &VoxScene ) -> Vec< u8 > {
   let out_chunks = from_custom( &scene );
-  file_raw( &out_chunks );
+  file_raw( &out_chunks )
 }
 
 /// Writes a raw chunk to the byte vector.
